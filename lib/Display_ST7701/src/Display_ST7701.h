@@ -20,9 +20,9 @@
 
 #include "TCA9554PWR.h"
 
-#define LCD_CLK_PIN           5
-#define LCD_MOSI_PIN          7
-#define LCD_BACKLIGHT_PIN     16
+#define LCD_CLK_PIN           EXIO_PIN1
+#define LCD_MOSI_PIN          EXIO_PIN8
+#define LCD_BACKLIGHT_PIN     EXIO_PIN4
 
 // Backlight   
 #define pwm_channel           1         // PWM Channel   
