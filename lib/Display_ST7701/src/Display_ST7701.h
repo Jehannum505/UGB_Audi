@@ -20,9 +20,9 @@
 
 #include "TCA9554PWR.h"
 
-#define LCD_CLK_PIN           2
-#define LCD_MOSI_PIN          1 
-#define LCD_BACKLIGHT_PIN     6
+#define LCD_CLK_PIN           5
+#define LCD_MOSI_PIN          7
+#define LCD_BACKLIGHT_PIN     16
 
 // Backlight   
 #define pwm_channel           1         // PWM Channel   
@@ -55,26 +55,26 @@
 //////////////////// Please update the following configuration according to your board spec ////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define ESP_PANEL_LCD_PIN_NUM_RGB_HSYNC           (38)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_VSYNC           (39)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DE              (40)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_PCLK            (41)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA0           (42)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA1           (45)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA2           (48)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA3           (47)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA4           (21)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA5           (14)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA6           (13)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA7           (12)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA8           (11)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA9           (10)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA10          (9)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA11          (46)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA12          (3)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA13          (17)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA14          (18)
-#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA15          (8)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_HSYNC           (41)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_VSYNC           (42)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DE              (3)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_PCLK            (1)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA0           (40)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA1           (39)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA2           (38)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA3           (0)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA4           (45)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA5           (48)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA6           (47)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA7           (21)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA8           (14)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA9           (13)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA10          (12)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA11          (11)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA12          (10)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA13          (9)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA14          (46)
+#define ESP_PANEL_LCD_PIN_NUM_RGB_DATA15          (3)
 #define ESP_PANEL_LCD_PIN_NUM_RGB_DISP            (-1)
 
 #define ESP_PANEL_LCD_BK_LIGHT_ON_LEVEL           (1)

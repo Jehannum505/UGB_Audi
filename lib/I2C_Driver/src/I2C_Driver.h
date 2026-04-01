@@ -1,8 +1,8 @@
 #pragma once
 #include <Wire.h> 
 
-#define I2C_SCL_PIN       7
-#define I2C_SDA_PIN       15
+#define I2C_SCL_PIN       18
+#define I2C_SDA_PIN       8
 
 #define I2C_OK            true
 #define I2C_FAIL          false

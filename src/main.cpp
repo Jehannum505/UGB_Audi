@@ -33,7 +33,7 @@ const int SCALE_MIN           = -200;
 const int SCALE_MAX           = 1400;
 const int SCALE_TICKS_COUNT   = 9;
 
-const bool TESTING            = false; // set to true for needle sweep testing
+const bool TESTING            = true; // set to true for needle sweep testing
 
 lv_obj_t *scale_ticks[SCALE_TICKS_COUNT];
 
@@ -56,10 +56,10 @@ lv_obj_t *needle_img;
 void drivers_init(void) {
   i2c_init();
 
-  Serial.println("Scanning for TCA9554...");
+  Serial.println("Scanning for TCA9554A...");
   bool found = false;
   for (int attempt = 0; attempt < 10; attempt++) {
-  if (i2c_scan_address(0x20)) { // 0x20 is default for TCA9554
+  if (i2c_scan_address(0X3F)) { // 0x3F is default for TCA9554A
       found = true;
       break;
     }
@@ -67,7 +67,7 @@ void drivers_init(void) {
   }
 
   if (!found) {
-    Serial.println("TCA9554 not detected! Skipping expander init.");
+    Serial.println("TCA9554A not detected! Skipping expander init.");
   } else {
   tca9554pwr_init(0x00);
   }
@@ -301,16 +301,17 @@ void process_can_queue_task(void *arg) {
 }
 
 void setup(void) {
+  sleep(3);
   Serial.begin(115200);
   Serial.println("begin");
   drivers_init();
   set_backlight(80);
   screens_init();
-  needle_sweep();
-  set_exio(EXIO_PIN4, Low);
+  needle_sweep(); 
+/*  set_exio(EXIO_PIN2, Low);
   esp_reset_reason_t reason = esp_reset_reason();
   Serial.printf("Reset reason: %d\n", reason);
-
+*/
   // Create CAN message queue
   canMsgQueue = xQueueCreate(CAN_QUEUE_LENGTH, CAN_QUEUE_ITEM_SIZE);
   if (canMsgQueue == NULL) {
@@ -320,6 +321,7 @@ void setup(void) {
 
   xTaskCreatePinnedToCore(receive_can_task, "Receive_CAN_Task", 4096, NULL, 2, NULL, 1);
   xTaskCreatePinnedToCore(process_can_queue_task, "Process_CAN_Queue_Task", 4096, NULL, 2, NULL, 1);
+  Serial.println("finished setup");
 }
 
 void loop(void) {

@@ -24,21 +24,21 @@ void st7701_write_data(uint8_t data) {
 }
 
 void st7701_cs_en(){
-  set_exio(EXIO_PIN3, Low);
+  set_exio(EXIO_PIN1, Low);
 
   vTaskDelay(pdMS_TO_TICKS(10));
 }
 
 void st7701_cs_dis(){
-  set_exio(EXIO_PIN3, High);
+  set_exio(EXIO_PIN1, High);
 
   vTaskDelay(pdMS_TO_TICKS(10));
 }
 
 void st7701_reset(){
-  set_exio(EXIO_PIN1, Low);
+  set_exio(EXIO_PIN3, Low);
   vTaskDelay(pdMS_TO_TICKS(10));
-  set_exio(EXIO_PIN1, High);
+  set_exio(EXIO_PIN3, High);
   vTaskDelay(pdMS_TO_TICKS(50));
 }
 
